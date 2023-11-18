@@ -59,7 +59,7 @@ export default function ComicsInput(props){
         onChange={(e)=> setPrompt(e.target.value)}
         placeholder="Enter the prompt to generate image" rows={3}/>
         
-        <button 
+        {!isLoading ? <button 
         className='absolute bottom-3 right-2 bg-gray-400 rounded-xl p-1 hover:bg-gray-600'
         onClick={updateElement}
         >
@@ -67,5 +67,10 @@ export default function ComicsInput(props){
 arrow_upward
         </span>
         </button>
+        :
+        <div className='absolute bottom-3 right-2 bg-gray-400 rounded-xl p-1' ><span class="material-symbols-outlined text-white">
+hourglass_bottom
+</span></div>
+}
         </div>
 }
