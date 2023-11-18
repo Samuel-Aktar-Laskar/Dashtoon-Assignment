@@ -1,4 +1,4 @@
-Deployment URL: https://dashtoon-assignment.netlify.app/comics_form
+Deployment URL: https://dashtoon-assignment.netlify.app
 
 ## Getting Started
 The project is build using next js framework and utilizing tailwind css. 
