@@ -1,3 +1,4 @@
+import AnnotationCloud from "@/components/annotation_cloud"
 import AppContext from "@/context/context"
 import { useContext, useState } from "react"
 
@@ -30,12 +31,23 @@ export default function Home() {
         lg:w-[60rem] lg:grid-cols-7  
         ">
             {context.comicsList.map((value, key) =>
-                <img src={value.url} key={key} className={`
-            h-[12rem] w-[20rem] border-2 border-gray-400
+            <div className={`
+            relative 
+            h-[12rem]  border-2 border-gray-400
             md:w-full
             lg:w-full lg:h-[16rem] 
-            ${mat[key]}`
+            ${mat[key]}`}>
+                {value.annotation != null && <AnnotationCloud annotation={value.annotation}
+                className='w-[40%] h-[30%]'
+                 />}
+
+                <img src={value.url} key={key} className={`
+                            h-full w-full object-cover
+            md:w-full
+            lg:w-full lg:h-[16rem] 
+           `
                 } />
+            </div>
             )}
         </div>
     </section>

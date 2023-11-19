@@ -9,7 +9,7 @@ export default function Home() {
   const context = useContext(AppContext)
   const router = useRouter()
   const addComics = (url, prompt)=>{
-    context.setComicsList([...context.comicsList,{url:url,prompt:prompt}])
+    context.setComicsList([...context.comicsList,{url:url,prompt:prompt,annotation:null}])
   }
   return (
   <section>
@@ -18,7 +18,7 @@ export default function Home() {
     <div className='mt-10 md:grid md:grid-cols-2 md:gap-4'>
       {
         context.comicsList.map((item, index) => (
-          <ComicsInput index={index} url={item.url} prompt={item.prompt} />
+          <ComicsInput index={index} url={item.url} prompt={item.prompt} annotation={item.annotation}/>
         ))
       }
     </div>
